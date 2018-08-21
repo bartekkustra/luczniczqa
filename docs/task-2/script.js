@@ -15,8 +15,10 @@ if(localStorage.getItem('notification')) {
 }
 
 $(document).ready(function() {
-  $('#form').submit(function() {
+  $('#form').submit(function(e) {
+    e.preventDefault();
     localStorage.setItem('login', $('#login').val());
     localStorage.setItem('pass', $('#password').val());
+    window.location.replace("login.html");
   });
 });
