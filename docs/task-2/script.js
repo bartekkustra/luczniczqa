@@ -20,4 +20,10 @@ $(document).ready(function() {
     localStorage.setItem('pass', $('#password').val());
     window.location.replace("login.html");
   });
+
+  $('#form > input').keypress(function(e) {
+    if(e.key === "Enter") {
+      $('button').click();
+    }
+  });
 });
