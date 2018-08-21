@@ -15,8 +15,7 @@ if(localStorage.getItem('notification')) {
 }
 
 $(document).ready(function() {
-  $('#form').submit(function(e) {
-    e.preventDefault();
+  $('#form > button').click(function() {
     localStorage.setItem('login', $('#login').val());
     localStorage.setItem('pass', $('#password').val());
     window.location.replace("login.html");
