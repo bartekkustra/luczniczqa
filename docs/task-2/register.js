@@ -15,12 +15,11 @@ if(localStorage.getItem('notification')) {
 }
 
 $(document).ready(function() {
-  $('#form').submit(function(e) {
+  $('#form > button').click(function() {
     var login = $('#login').val();
     var pass = $('#password').val();
 
     if(!login || !pass) {
-      e.preventDefault();
       localStorage.setItem('notification', 'Musisz podać login i hasło');
       window.location.reload();
     }
@@ -30,10 +29,17 @@ $(document).ready(function() {
       pass: pass
     };
 
-    debugger;
     var ls_users = localStorage.getItem('users')
     ls_users = JSON.parse(ls_users);
     ls_users.push(newuser);
     localStorage.setItem('users', JSON.stringify(ls_users));
+
+    window.location.replace("index.html");
+  });
+
+  $('input').keypress(function(e) {
+    if(e.key === "Enter") {
+      $('button').click();
+    }
   });
 });
