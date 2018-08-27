@@ -20,7 +20,7 @@ $(document).ready(function() {
     var pass = $('#password').val();
 
     if(!login || !pass) {
-      localStorage.setItem('notification', 'Musisz podać login i hasło');
+      localStorage.setItem('notification', 'You need to type login and password!');
       window.location.reload();
     }
 

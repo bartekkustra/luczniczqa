@@ -10,7 +10,7 @@ if(!localStorage.getItem('users')) {
 // JSON.stringify
 
 if(localStorage.getItem('logged')) {
-  $('#welcomemsg').text(`Witaj ${localStorage.getItem('username')}!`)
+  $('#welcomemsg').text(`Hello ${localStorage.getItem('username')}!`)
 } else {
   // store login&pass in variables
   var login = localStorage.getItem('login');
