@@ -10,7 +10,8 @@ if(!localStorage.getItem('users')) {
 // JSON.stringify
 
 if(localStorage.getItem('logged')) {
-  $('#welcomemsg').text(`Hello ${localStorage.getItem('username')}!`)
+  //$('#welcomemsg').text(`Hello ${localStorage.getItem('username')}!`)
+  $('#welcomemsg').text(`Witaj ${localStorage.getItem('username')}!`)
 } else {
   // store login&pass in variables
   var login = localStorage.getItem('login');
@@ -31,7 +32,8 @@ if(localStorage.getItem('logged')) {
     window.location.reload();
   } else {
     localStorage.removeItem('logged');
-    localStorage.setItem('notification', "Incorrect login or password");
+    // localStorage.setItem('notification', "Incorrect login or password");
+    localStorage.setItem('notification', "Błędny login lub hasło");
     window.location.href = "index.html";
   }
 }
